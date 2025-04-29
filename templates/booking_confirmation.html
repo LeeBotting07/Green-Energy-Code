@@ -1,0 +1,10 @@
+{% extends "main.html" %}
+{% block title %}Booking Confirmation{% endblock %}
+{% block content %}
+<div class="booking-box-container">
+    <div class="booking-box">
+        <h2 class="booking-box-title">Your booking has been booked for {{ name }} on {{ date }} at {{ time }}.</h2>
+        <a href="{{ url_for('home') }}" class="hero-btn">Return Home</a>
+    </div>
+</div>
+{% endblock %}

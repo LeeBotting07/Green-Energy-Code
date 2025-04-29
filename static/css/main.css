@@ -1,0 +1,1560 @@
+/* Main CSS for Rolsa UI */
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes backgroundAnimation {
+    0% { background-color: #e0e6ed; }
+    50% { background-color: #d0d6de; }
+    100% { background-color: #e0e6ed; }
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    10%, 90% { transform: translate(-3px, 3px); }
+    20%, 80% { transform: translate(3px, -3px); }
+    30%, 70% { transform: translate(-3px, -3px); }
+    40%, 60% { transform: translate(3px, 3px); }
+    50% { transform: translate(0); }
+}
+
+.glitch {
+    animation: glitch 2s infinite;
+}
+
+html, body {
+    height: 100%;
+}
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    opacity: 0; /* Initial opacity for fade-in effect */
+    animation: fadeIn 1s forwards; /* Apply fade-in effect */
+    margin: 0;
+    padding: 0;
+    background-color: #e0e6ed; /* Muted light gray background */
+    margin-top: 0; /* Reset any top margin */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    padding-top: 40px; 
+    flex-grow: 1;
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 1.15em 0;
+    background-color: #2c3e50; /* Darker navy blue background */
+    position: fixed; 
+    top: 0;
+    width: 100%; 
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 1.5em;
+}
+
+nav ul li a {
+    color: #ecf0f1; /* Light gray text */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.4em;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #00ff00; 
+    text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+    transform: scale(1.1);
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('/static/images/background.png');
+    animation: backgroundAnimation 5s infinite alternate; /* Apply background animation */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    height: 100vh; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    margin-top: 0;
+}
+
+.hero img.logo {
+    max-width: 30%; 
+    height: auto; 
+    margin-bottom: 20px; 
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin: 10px 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.hero-btn {
+    background-color: #4ea543; /* blue button */
+    color: #2c3e50; /* Darker navy blue text */
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em; 
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(50, 250, 0, 0.3);
+}
+
+.hero-btn:hover {
+    background-color: #00a31b;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); /* Add glow effect on hover */
+    transform: scale(1.05);
+    transition: background-color 0.3s ease 0.2s, transform 0.3s ease;
+    background: linear-gradient(90deg, #4ea543, #00a31b);
+}
+
+.hero h1, .hero-btn:hover {
+    color: #fff; /* White text */
+    transition: color 0.3s ease 0.2s; 
+}
+
+.section-bg {
+    background-image: url('/static/images/row.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px 20px 20px 20px; /* Reduced bottom padding */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Wind Turbine Section */
+.wind-turbine-section {
+    background: linear-gradient(135deg, #4ea543, #2c3e50);
+    color: #ffffff;
+    padding: 50px 25px;
+    text-align: center;
+    border-radius: 15px;
+    margin: 30px auto;
+    max-width: 900px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wind-turbine-section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.wind-turbine-section h2 {
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.wind-turbine-section p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.wind-btn {
+    background: linear-gradient(45deg, #2c3e50, #4ea543);
+    color: #ffffff; /* Ensure text is white */
+    padding: 18px 40px;
+    font-size: 1.3em;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 6px 15px rgba(78, 165, 67, 0.6);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.wind-btn:hover {
+    background: linear-gradient(45deg, #4ea543, #2c3e50);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 255, 0, 0.8);
+    color: #00ff00; /* Change text color on hover */
+}
+
+/* Enhanced Service Sections */
+.solar-panel-section,
+.ev-charging-section,
+.smart-home-energy-section {
+    background: linear-gradient(135deg, #4ea543, #2c3e50); 
+    color: #ffffff; 
+    padding: 50px 25px; /* Match padding with wind turbine section */
+    border-radius: 15px;
+    margin: 30px auto;
+    max-width: 900px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); 
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.solar-panel-section:hover,
+.ev-charging-section:hover,
+.smart-home-energy-section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); 
+}
+
+.solar-panel-section h2,
+.ev-charging-section h2,
+.smart-home-energy-section h2 {
+    font-size: 2.8em; /* Match font size with wind turbine section */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.solar-panel-section p,
+.ev-charging-section p,
+.smart-home-energy-section p {
+    font-size: 1.3em; /* Match font size with wind turbine section */
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.enhanced-section .service-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    margin: 20px 0;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.enhanced-section .service-image:hover {
+    transform: scale(1.05);
+}
+
+.enhanced-section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px auto 30px;
+    max-width: 600px;
+    text-align: left;
+}
+
+.enhanced-section ul li {
+    position: relative;
+    padding-left: 30px;
+    margin: 12px 0;
+    font-size: 1.2em;
+    color: #e0f2e9; 
+}
+
+.enhanced-section ul li:before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: #a8e6cf; 
+    font-weight: bold;
+    font-size: 1.5em;
+    line-height: 1; /* Ensure proper alignment */
+    vertical-align: middle; /* Align with text */
+}
+
+.service-btn {
+    background: linear-gradient(45deg, #2c3e50, #4ea543);
+    color: #ffffff;
+    padding: 18px 40px;
+    font-size: 1.3em;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(78, 165, 67, 0.6); 
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.service-btn:hover {
+    background: linear-gradient(45deg, #4ea543, #2c3e50);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 255, 0, 0.8), 0 0 20px rgba(0, 255, 0, 0.6);
+    color: #00ff00; /* Change text color on hover */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #2c3e50; 
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 0.9em; /* Slightly smaller font size for a cleaner look */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+.footer-logo-img {
+    width: 180px; 
+    height: auto; 
+}
+
+.footer-links, .footer-social-media {
+    margin: 20px 0;
+}
+
+.footer-links h4, .footer-social-media h4 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin: 5px 0;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: #bdc3c7; 
+}
+
+.footer-social-media {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: auto;
+    vertical-align: middle;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 0.8em; 
+}
+
+/* Energy Page Styles */
+.calculate-energy {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.energy-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 32px; /* Increased padding */
+    font-size: 1.3rem; /* Increased font size */
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+    background-color: #2ecc71;
+    border: none;
+    border-radius: 10px; /* Slightly increased border radius */
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.energy-button:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+}
+
+.energy-button:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.spark-icon {
+    width: 24px; /* Increased icon size */
+    height: 24px; /* Increased icon size */
+    margin-right: 10px; /* Slightly increased spacing */
+    fill: #fff;
+}
+
+.energy-page .energy-gogreen, 
+.energy-page .energy-saving-tips, 
+.energy-page .energy-sources, 
+.energy-page .charging {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px 0;
+    transition: transform 0.3s;
+}
+
+.energy-page .energy-gogreen:hover, 
+.energy-page .energy-saving-tips:hover, 
+.energy-page .energy-sources:hover, 
+.energy-page .charging:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    transform: scale(1.02);
+}
+
+.energy-page header {
+    font-size: 24px;
+    color: #4CAF50; /* Green color */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.energy-page p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.energy-page ul {
+    list-style-type: none; 
+    padding: 0;
+}
+
+.energy-page ul li {
+    position: relative;
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.energy-page ul li:before {
+    content: '✔'; /* Custom bullet */
+    position: absolute;
+    left: 0;
+    color: #4CAF50;
+}
+.energy-bg {
+    background: url('/static/images/energy.png') no-repeat center center fixed;
+    background-size: cover;
+    padding: 80px 20px;
+    margin-top: 0;
+    margin-top: -60px;
+}
+
+/* Energy Calculator Styles */
+.coming-soon {
+    background-color: #fff; /* White container background */
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center;
+}
+
+h1 {
+    color: #007bff; 
+    margin-bottom: 15px;
+    font-size: 2.5em;
+}
+
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.development {
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* Optional: Add a subtle animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.coming-soon {
+    animation: fadeIn 0.5s ease-out;
+}
+
+
+/*account page*/
+.account-bg {
+    background-image: url('/static/images/slammed.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px 20px 20px 20px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.account-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.account-info, .account-actions, .account-activities {
+    margin-bottom: 20px;
+}
+
+.account-info p, .account-activities ul {
+    margin: 10px 0;
+}
+
+.account-actions a {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #4a90e2; 
+    color: white;
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.6); 
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #357abd; 
+    box-shadow: 0 0 20px rgba(74, 144, 226, 0.8);
+}
+
+.btn-danger {
+    background-color: #e74c3c; 
+    color: white;
+    box-shadow: 0 0 10px rgba(231, 76, 60, 0.6); 
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b; 
+    box-shadow: 0 0 20px rgba(231, 76, 60, 0.8); 
+}
+
+/* Form Styles */
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-header {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000000; 
+    text-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14; 
+    text-align: center; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100px; 
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: left; 
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea,
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn-primary-primary {
+    background-color: #39FF14; 
+    color: #2c3e50; 
+    box-shadow: 0 4px 12px rgba(57, 255, 20, 0.5);
+}
+
+.btn-primary-primary:hover {
+    background-color: #32e012; 
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.8);
+    transform: scale(1.05); 
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    color: white;
+    box-shadow: 0 0 10px rgba(231, 76, 60, 0.6);
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+    box-shadow: 0 0 20px rgba(231, 76, 60, 0.8);
+}
+
+/* Booking Page Styles */
+.booking-container {
+    background: url('/static/images/background3.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%; /* Use percentage instead of viewport width */
+    padding: 60px 0 0 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.booking-container .glitch {
+    font-size: 4.8rem;
+    color: #fff;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    text-shadow: 0 0 10px #39FF14,
+                0 0 20px #39FF14,
+                0 0 30px #39FF14;
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+.booking-container p {
+    font-size: 2.5rem;
+    color: #fff;
+    text-align: center;
+    max-width: 600px;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 5px rgba(57, 255, 20, 0.5);
+}
+
+@keyframes glowPulse {
+    0% {
+        text-shadow: 0 0 10px #39FF14,
+                     0 0 20px #39FF14,
+                     0 0 30px #39FF14;
+    }
+    50% {
+        text-shadow: 0 0 20px #39FF14,
+                     0 0 30px #39FF14,
+                     0 0 40px #39FF14;
+    }
+    100% {
+        text-shadow: 0 0 10px #39FF14,
+                     0 0 20px #39FF14,
+                     0 0 30px #39FF14;
+    }
+}
+
+/* Button Styles */
+.booking-buttons-container {
+    display: flex;
+    justify-content: center; 
+    gap: 50px; 
+    margin: 50px 0; 
+}
+
+.btn-meeting {
+    display: inline-block;
+    padding: 90px 150px; 
+    font-size: 60px; 
+    color: #fff;
+    background: linear-gradient(45deg, #6a11cb, #2575fc); 
+    border: none;
+    border-radius: 20px; 
+    text-align: center;
+    transition: background 0.3s ease-in-out, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.2);
+}
+
+.btn-meeting:hover {
+    background: linear-gradient(45deg, #2575fc, #6a11cb); /* Switch colors */
+    transform: translateY(-15px); /* Move up on hover */
+    transition: background 0.5s ease-in-out, transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-meeting:active {
+    transform: translateY(6px); /* Bounce effect on click */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+}
+
+.btn-consultation {
+    display: inline-block;
+    padding: 90px 150px;
+    font-size: 60px; 
+    color: #fff;
+    background: linear-gradient(45deg, #32cd32, #ffd700); /* Green to Yellow */
+    border: none;
+    border-radius: 20px;
+    text-align: center;
+    transition: background 0.3s ease-in-out, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.2);
+}
+
+.btn-consultation:hover {
+    background: linear-gradient(45deg, #ffd700, #32cd32); /* Switch colors */
+    transform: translateY(-15px); /* Move up on hover */
+    transition: background 0.5s ease-in-out, transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-consultation:active {
+    transform: translateY(6px); /* Bounce effect on click */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.2);
+}
+
+.super-cool-btns:hover {
+    background: linear-gradient(45deg, #2575fc, #6a11cb);
+    transform: translateY(-9px);
+    box-shadow: 0 18px 60px rgba(0, 0, 0, 0.3);
+    transition: background 0.5s ease-in-out, transform 0.3s, box-shadow 0.3s;
+}
+
+.super-cool-btns:active {
+    transform: translateY(3px);
+    box-shadow: 0 9px 30px rgba(0, 0, 0, 0.2);
+}
+
+.booking-box-container {
+    background-image: url('/static/images/background4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    margin-top: 0;
+    margin-top: -60px;
+}
+
+.booking-box {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
+    width: 100%;
+    max-width: 600px;
+    position: relative;
+    border: 1px solid rgba(57, 255, 20, 0.2);
+}
+
+.booking-box h2 {
+    color: #fff;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+}
+
+.booking-box-title {
+    color: #fff;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
+}
+
+.booking-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.booking-box label {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.booking-box input {
+    width: 100%;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid #39FF14;
+    border-radius: 8px;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.booking-box input:focus {
+    outline: none;
+    border-color: #fff;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.4);
+}
+
+.booking-box button {
+    background: linear-gradient(45deg, #32cd32, #39FF14);
+    color: #000;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.booking-box button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(57, 255, 20, 0.6);
+}
+
+.booking-box input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+@media (max-width: 768px) {
+    .booking-box {
+        padding: 1.5rem;
+    }
+    
+    .booking-box h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Cancel Booking Styles */
+.cancel-booking-container {
+    background: url('/static/images/background5.png') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    margin-top: 0;
+    margin-top: -60px;
+}
+
+.cancel-booking {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+}
+
+.cancel-booking h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+.cancel-booking .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.cancel-booking label {
+    display: block;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.cancel-booking select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+.cancel-booking select:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.cancel-booking .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    margin: 0.5rem;
+}
+
+.cancel-booking .btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.cancel-booking .btn-danger:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.4);
+}
+
+.cancel-booking .btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.cancel-booking .btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+
+.cancel-booking p {
+    color: #666;
+    text-align: center;
+    font-size: 1.1rem;
+    margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+    .cancel-booking {
+        margin: 20px;
+        padding: 20px;
+    }
+    
+    .cancel-booking h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cancel-booking select,
+    .cancel-booking .btn {
+        font-size: 0.9rem;
+    }
+}
+
+/* About Us Page Styles */
+.about-us {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #7fba7a, #a8e6cf, #b8f2e6);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 2s ease-in-out;
+    margin-top: 0;
+    margin-top: -20px;
+}
+
+.about-us h1, .about-us h2 {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    animation: pulse 1.5s infinite;
+}
+
+.about-us p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.about-us p:hover {
+    transform: scale(1.02);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.about-us ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-us ul li {
+    font-size: 1.1rem;
+    margin: 10px 0;
+    padding: 10px;
+    background: linear-gradient(90deg, #e3f4d7, #98d687);
+    border-radius: 8px;
+    color: #333;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.about-us ul li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.about-us strong {
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+    50% {
+        text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7);
+    }
+}
+
+.green-btn-btn {
+    display: inline-block;
+    background-color: #4ea543;
+    color: #2c3e50;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 12px rgba(50, 250, 0, 0.3);
+    position: relative;
+    cursor: pointer;
+    /* Remove any potential conflicts */
+    animation: none;
+}
+
+.green-btn-btn:hover {
+    animation: float 2s ease-in-out infinite;
+    background-color: #00a31b;
+    color: #fff;
+    box-shadow: 0 0 30px rgba(78, 165, 67, 0.8);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Contact Us Page Styles */
+.contact-bg {
+    background-image: url('/static/images/sporty_t.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px 20px 20px 20px; /* Reduced bottom padding */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f7fcf7; 
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 100, 0, 0.08); 
+}
+
+.contact-container h2 {
+    color: #2e7d32; 
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-container p {
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.contact-email {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 6px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.flashes {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.flashes li {
+    background-color: #d4edda; 
+    color: #155724; 
+    padding: 12px 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #c3e6cb; 
+}
+
+.flashes li.error {
+    background-color: #f8d7da; 
+    color: #721c24; 
+    border: 1px solid #f5c6cb; 
+}
+
+.contact-container label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: bold;
+}
+
+.contact-container input[type="text"],
+.contact-container input[type="email"],
+.contact-container textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-container textarea {
+    resize: vertical;
+}
+
+.contact-container button[type="submit"] {
+    background-color: #4caf50; 
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact-container button[type="submit"]:hover {
+    background-color: #388e3c; 
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-container {
+        margin: 30px;
+        padding: 20px;
+    }
+}
+
+/* Change Password Page */
+.change-password-page {
+    min-height: 100vh;
+    background: url('/static/images/background5.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 0;
+    margin-top: -60px;
+}
+
+.change-password-container {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 15px;
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.change-password-container h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.change-password-container .form-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.change-password-container .form-group {
+    margin-bottom: 15px;
+}
+
+.change-password-container label {
+    display: block;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.change-password-container input[type="password"] {
+    width: calc(100% - 24px); /* Account for padding */
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.change-password-container input[type="password"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.change-password-container .btn {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.change-password-container .btn:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+}
+
+/* Edit Profile Page */
+.edit-profile-page {
+    min-height: 100vh;
+    background: url('/static/images/background5.png') no-repeat center center fixed;
+    background-size: cover;
+    padding: 80px 20px;
+    margin-top: 0;
+    margin-top: -60px;
+}
+
+.edit-profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.edit-profile-container .form-header {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.edit-profile-container .form-group {
+    margin-bottom: 20px;
+}
+
+.edit-profile-container label {
+    display: block;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.edit-profile-container input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.edit-profile-container input:focus {
+    border-color: #4CAF50;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.edit-profile-container .btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.edit-profile-container .btn-primary {
+    background-color: #28a745;
+    color: white;
+}
+
+.edit-profile-container .btn-primary:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4);
+}
+
+/* Specific styles for the carbon footprint section */
+.carbon-footprint-bg {
+    background: url('/static/images/pond.png') no-repeat center center fixed;
+    background-size: cover;
+    padding: 80px 20px;
+    margin-top: 0;
+    margin-top: -60px;
+}
+
+.carbon-footprint-main-content {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.7;
+    background-color: #b4eec1;
+    color: #333; /* A dark but not overpowering base text color */
+    margin: 40px auto;
+    padding: 30px;
+    max-width: 960px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 150, 0, 0.08); /* Soft, slightly brighter green shadow */
+}
+
+.carbon-footprint-hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.carbon-footprint-hero-title {
+    font-size: 3rem;
+    color: #228B22; /* Forest green, a nice vibrant green */
+    margin-bottom: 15px;
+    letter-spacing: -0.8px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05); /* Subtle lift */
+}
+
+.carbon-footprint-hero-description {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Carbon Calculator Section */
+.carbon-calculator-section {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 150, 0, 0.06);
+    margin-bottom: 30px;
+}
+
+.carbon-calculator-header {
+    font-size: 2.4rem;
+    color: #3CB371; /* Medium sea green, a brighter green */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.carbon-calculator-description {
+    color: #444;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.carbon-calculator-iframe-container {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 150, 0, 0.1);
+}
+
+.carbon-calculator-iframe {
+    display: block;
+    width: 100%;
+    height: 650px; /* Adjust as needed */
+    border: none;
+}
+
+/* Carbon Tips Section */
+.carbon-tips-section {
+    background: #e0fae0; /* A very pale green */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 150, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.carbon-tips-section-title {
+    font-size: 2rem;
+    color: #2E8B57; /* Sea green, another nice bright option */
+    margin-bottom: 20px;
+    border-bottom: 3px solid #8FBC8F; /* Dark sea green for a subtle highlight */
+    padding-bottom: 10px;
+}
+
+.carbon-tips-section-paragraph,
+.carbon-tips-benefits-title,
+.carbon-tips-wildlife-title {
+    font-size: 1.15rem;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.carbon-tips-benefits-item {
+    list-style: none;
+    padding-left: 0;
+}
+
+.carbon-tips-benefits-item {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 15px;
+}
+
+.carbon-tips-benefits-item:before {
+    content: "\2713"; /* Checkmark */
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #3CB371; 
+    font-size: 1.2rem;
+    font-family: Arial, sans-serif; /* Ensure a font that supports the checkmark */
+}
+
+/* Carbon Resources Section */
+.carbon-resources-section {
+    background: #f0fff0; 
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 150, 0, 0.04);
+    margin-bottom: 40px;
+}
+
+.carbon-resources-section-title {
+    font-size: 1.8rem;
+    color: #2E8B57;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #8FBC8F;
+    padding-bottom: 8px;
+}
+
+.carbon-resources-list {
+    list-style: square;
+    padding-left: 20px;
+}
+
+.carbon-resources-list-item {
+    margin-bottom: 10px;
+}
+
+.carbon-resources-link {
+    color: #2E8B57;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease-in-out;
+}
+
+.carbon-resources-link:hover {
+    color: #3CB371;
+    text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .carbon-footprint-main-content {
+        margin: 20px;
+        padding: 20px;
+    }
+    .carbon-footprint-hero-title {
+        font-size: 2.6rem;
+    }
+    .carbon-calculator-iframe {
+        height: 550px;
+    }
+}
+
+@media (max-width: 576px) {
+    .carbon-footprint-hero-title {
+        font-size: 2.2rem;
+    }
+    .carbon-calculator-iframe {
+        height: 450px;
+    }
+    .carbon-tips-section {
+        padding: 20px;
+    }
+}

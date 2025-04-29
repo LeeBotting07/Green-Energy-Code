@@ -1,0 +1,54 @@
+{% extends "main.html" %}
+{% block content %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <div class="flash-messages">
+            {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endwith %}
+<div class="account-bg">
+    <div class="account-container">
+        <div class="account-container">
+            <h2 class="glitch">Account Details</h2> <!-- Added glitch effect -->
+            <p>Manage your account settings here.</p>
+        </div>
+        <div class="account-info">
+            <h3>Profile Information</h3>
+            <p><strong>Email Address:</strong> {{ email }}</p>
+            <p><strong>First Name:</strong> {{ first_name }}</p>
+            <p><strong>Last Name:</strong> {{ last_name }}</p>
+        </div> 
+        <div class="account-actions">
+        <h3>Meetings</h3>
+        {% if meetings %}
+            <ul>
+            {% for meeting in meetings %}
+                <li>{{ meeting['date'] if meeting['date'] else 'N/A' }} - {{ meeting['time'] if meeting['time'] else 'N/A' }}: {{ meeting['reason'] if meeting['reason'] else 'No Reason Provided' }}</li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No meetings booked.</p>
+        {% endif %}
+        
+        <h3>Consultations</h3>
+        {% if consultations %}
+            <ul>
+            {% for consultation in consultations %}
+                <li>{{ consultation['date'] if consultation['date'] else 'N/A' }} - {{ consultation['time'] if consultation['time'] else 'N/A' }}: {{ consultation['reason'] if consultation['reason'] else 'No Reason Provided' }}</li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No consultations booked.</p>
+        {% endif %}
+        <a href="{{ url_for('cancel_booking') }}" class="btn btn-danger">Cancel a Booking</a>
+            <h3>Account Actions</h3>
+        <a href="{{ url_for('edit_profile')}}" class="btn btn-danger">Edit Profile</a>
+        <a href="{{ url_for('change_password')}}" class="btn btn-primary">Change Password</a>
+        <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+    </div>
+</div>
+
+{% endblock %}

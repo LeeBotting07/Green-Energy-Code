@@ -1,0 +1,39 @@
+{% extends "main.html" %}
+{% block title %}Consultation Booking{% endblock %}
+{% block content %}
+<div class="booking-box-container">
+    <div class="booking-box">
+        <h2>Book a Consultation</h2>
+        <form action="{{ url_for('submit_consultation_booking') }}" method="POST" onsubmit="return validateYear()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" value="{{ session['email'] }}" readonly class="booking-email">
+            
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required max="2028-12-31">
+            
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required>
+            
+            <label for="reason">Reason for Booking:</label>
+            <input type="text" id="reason" name="reason" required placeholder="e.g., Applying for an interview">
+            
+            <button type="submit" class="btn hero-btn">Submit</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function validateYear() {
+        const dateInput = document.getElementById('date').value;
+        const year = new Date(dateInput).getFullYear();
+        if (year < 2025 || year > 2028) {
+            alert('Please enter a valid year (4 digits).');
+            return false;
+        }
+        return true;
+    }
+    </script>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "main.html" %}
+{% block title %}Booking{% endblock %}
+{% block content %}
+
+<div class="booking-container">
+    <h2 class="glitch">Booking</h2>
+    <p>Book an appointment or a Consultation here.</p>
+
+    <div class="booking-buttons-container">
+        <a href="{{ url_for('meeting_booking')}}" class="btn-meeting">Book a Meeting</a>
+
+        <a href="{{ url_for('consultation_booking')}}" class="btn btn-consultation">Book a Consultation</a>
+    </div>
+</div>
+{% endblock %}

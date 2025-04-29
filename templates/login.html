@@ -1,0 +1,44 @@
+{% extends "main.html" %}
+{% block title %}Login{% endblock %}
+{% block content %}
+<div class="login-bg">
+    <div class="login-container">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+        <div class="login-box">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="login-logo">
+            <h2>Login</h2>
+            <p>Please enter your credentials to log in.</p>
+
+            <div class="oauth-info-message">
+                <p><strong>Note:</strong> If you signed up using Google Sign-In, please use the "Sign in with Google" button below. You do not have a password for this account and cannot use the login form.</p>
+            </div>
+
+            <form method="POST" action="{{ url_for('login') }}">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" required>
+                </div>
+                <button type="submit" class="button">Login</button>
+            </form>
+            <a href="/login/google" class="login-option google">
+                <h2 class="google-login-text">Sign in with Google</h2>
+            </a>
+            {% if error %}
+                <div class="flash-message error">{{ error }}</div>
+            {% endif %}
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="flash-message {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <p>Don't have an account? <a href="{{ url_for('register') }}">Register here</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}

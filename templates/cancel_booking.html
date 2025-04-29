@@ -1,0 +1,43 @@
+{% extends "main.html" %}
+{% block title %}Cancel Booking{% endblock %}
+{% block content %}
+<div class="cancel-booking-container">
+    <div class="cancel-booking">
+        <h2>Cancel a Booking</h2>
+        {% if items %}
+            <form action="{{ url_for('cancel_booking') }}" method="POST">
+                <div class="form-group">
+                    <label for="booking-select">Select Booking to Cancel:</label>
+                    <select name="booking_id" id="booking-select" required>
+                        {% for item in items %}
+                            <option value="{{ item[0] }}" data-type="{{ item[4] }}">
+                                {{ item[1] }} at {{ item[2] }} - {{ item[3] }}
+                                ({{ item[4]|title }})
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <input type="hidden" name="type" id="booking-type" value="">
+                <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to cancel this booking?')">
+                    Cancel Booking
+                </button>
+            </form>
+        {% else %}
+            <p>You have no bookings to cancel.</p>
+        {% endif %}
+        <a href="{{ url_for('account') }}" class="btn btn-primary">Back to Account</a>
+    </div>
+</div>
+<script>
+document.getElementById('booking-select').addEventListener('change', function() {
+    const selectedOption = this.options[this.selectedIndex];
+    document.getElementById('booking-type').value = selectedOption.dataset.type;
+});
+
+// Set initial value
+if (document.getElementById('booking-select').options.length > 0) {
+    document.getElementById('booking-type').value = 
+        document.getElementById('booking-select').options[0].dataset.type;
+}
+</script>
+{% endblock %}

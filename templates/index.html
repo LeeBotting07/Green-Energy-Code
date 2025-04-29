@@ -1,0 +1,56 @@
+{% extends "main.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="hero">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Company Logo" class="logo">
+    <h1 class="glitch">Welcome to Our Website</h1>
+    <p>Your journey to a greener future starts here.</p>
+    <a href="/energy" class="hero-btn">Green Energy</a>
+</div>
+
+<div class="section-bg">
+    <div class="solar-panel-section enhanced-section">
+        <h2>Solar Panel Installation and Maintenance</h2>
+        <p>Our trusted partners specialize in professional solar panel installation and maintenance services. They work closely with homeowners and businesses to design and install efficient solar energy systems tailored to your specific needs. With years of experience and a commitment to quality, these companies ensure your solar panels operate at peak performance, helping you save on energy costs while reducing your carbon footprint.</p>
+        <ul>
+            <li>Customized solar solutions for every property</li>
+            <li>Regular cleaning and inspection services</li>
+            <li>Expert repairs and system upgrades</li>
+            <li>Increase property value and energy savings</li>
+        </ul>
+        <a href="/contact" class="service-btn">Contact Us for Solar Services</a>
+    </div>
+
+    <div class="ev-charging-section enhanced-section">
+        <h2>Electric Vehicle (EV) Charging Stations</h2>
+        <p>As electric vehicles become increasingly popular, having a reliable and convenient charging station at home or work is essential. Our recommended installation companies provide state-of-the-art EV charging solutions that are safe, efficient, and easy to use. Whether you need a basic home charger or a commercial-grade charging station, they have the expertise to meet your requirements.</p>
+        <ul>
+            <li>Home and commercial charging solutions</li>
+            <li>Professional site assessment and installation</li>
+            <li>Ongoing maintenance and support</li>
+            <li>Future-proof your EV charging needs</li>
+        </ul>
+        <a href="/contact" class="service-btn">Get Your EV Charger Installed</a>
+    </div>
+
+    <div class="smart-home-energy-section enhanced-section">
+        <h2>Smart Home Energy Management Systems</h2>
+        <p>Take control of your energy consumption with advanced smart home energy management systems. Our partners provide cutting-edge technology that allows you to monitor, optimize, and automate your home's energy use. From smart thermostats to integrated solar and battery storage management, these systems help you reduce energy waste and lower your utility bills.</p>
+        <ul>
+            <li>Real-time energy monitoring and control</li>
+            <li>Integration with solar and battery systems</li>
+            <li>Automated energy-saving schedules</li>
+            <li>Remote access via mobile apps</li>
+        </ul>
+        <a href="/energy" class="service-btn">Learn More About Smart Energy</a>
+    </div>
+
+    <div class="wind-turbine-section">
+        <h2>Discover the Power of Wind Turbines</h2>
+        <p>Wind turbines are a clean, renewable source of energy that can help reduce your carbon footprint and save on energy costs. Investing in a wind turbine is a smart choice for a sustainable future.</p>
+        <p>On average, a small wind turbine can generate enough electricity to power a single home, depending on wind conditions in your area. The cost of installing a wind turbine can range from $3,000 to $8,000 per kilowatt of capacity, but the long-term savings on energy bills and the environmental benefits make it a worthwhile investment.</p>
+        <p>Wind turbines are not only cost-effective but also environmentally friendly. They produce no greenhouse gas emissions during operation, helping to combat climate change. Additionally, they require minimal maintenance and have a lifespan of 20-25 years, making them a reliable source of energy for decades.</p>
+        <a href="https://www.ecopowershop.com/collections/wind-turbines" target="_blank" rel="noopener" class="wind-btn">Buy a Wind Turbine</a>
+    </div>
+</div>
+{% endblock %}

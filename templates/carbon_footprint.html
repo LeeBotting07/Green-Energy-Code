@@ -1,0 +1,44 @@
+{% extends "main.html" %}
+{% block title %}Carbon Footprint{% endblock %}
+{% block content %}
+<div class="carbon-footprint-bg">
+    <main class="carbon-footprint-main-content">
+        <section class="carbon-footprint-hero">
+            <h1 class="carbon-footprint-hero-title">Carbon Footprint</h1>
+            <p class="carbon-footprint-hero-description">Calculate your carbon footprint and find out how you can reduce it with our carbon footprint calculator.</p>
+        </section>
+
+        <section class="carbon-calculator-section">
+            <header class="carbon-calculator-header">Carbon Footprint Calculator</header>
+            <p class="carbon-calculator-description">Calculate your carbon footprint and find out how you can reduce it with our carbon footprint calculator.</p>
+            <div class="carbon-calculator-iframe-container">
+                <iframe class="carbon-calculator-iframe" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" src="https://calculator.carbonfootprint.com/calculator.aspx"></iframe>
+            </div>
+        </section>
+
+        <section class="carbon-tips-section">
+            <h2 class="carbon-tips-section-title">Why Reduce Your Carbon Footprint?</h2>
+            <p class="carbon-tips-section-paragraph">Reducing your carbon footprint is essential for combating climate change. By lowering your emissions, you contribute to a healthier planet and a sustainable future.</p>
+
+            <h2 class="carbon-tips-benefits-title">Benefits to You</h2>
+            <ul class="carbon-tips-benefits-list">
+                <li class="carbon-tips-benefits-item">Improved health: Reducing emissions can lead to cleaner air and a healthier lifestyle.</li>
+                <li class="carbon-tips-benefits-item">Cost savings: Lower energy consumption can result in reduced utility bills.</li>
+                <li class="carbon-tips-benefits-item">Enhanced quality of life: Sustainable practices can lead to a more enjoyable living environment.</li>
+            </ul>
+
+            <h2 class="carbon-tips-wildlife-title">Impact on Wildlife</h2>
+            <p class="carbon-tips-wildlife-paragraph">By reducing your carbon footprint, you help protect wildlife and their habitats. A healthier environment supports biodiversity and ensures that future generations can enjoy nature.</p>
+        </section>
+
+        <section class="carbon-resources-section">
+            <h2 class="carbon-resources-section-title">Additional Resources</h2>
+            <ul class="carbon-resources-list">
+                <li class="carbon-resources-list-item"><a class="carbon-resources-link" href="https://www.epa.gov/ghgemissions/understanding-global-warming-potentials">Understanding Global Warming Potentials</a></li>
+                <li class="carbon-resources-list-item"><a class="carbon-resources-link" href="https://www.nrdc.org/stories/how-you-can-stop-global-warming">How You Can Stop Global Warming</a></li>
+                <li class="carbon-resources-list-item"><a class="carbon-resources-link" href="https://www.worldwildlife.org/pages/climate">What is a Carbon Footprint?</a></li>
+            </ul>
+        </section>
+    </main>
+</div>
+{% endblock %}

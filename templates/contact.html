@@ -1,0 +1,36 @@
+{% extends "main.html" %}
+{% block title %}Contact Us{% endblock %}
+{% block content %}
+<div class="contact-bg">
+    <div class="contact-container">
+        <h2>Contact Rolsa Technologies</h2>
+        <p>Join us in our mission to promote green energy and help you go green with electric solutions. We would love to hear from you!</p>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="flashes">
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
+
+        <form method="POST" action="{{ url_for('contact') }}">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="text" id="email" name="email" value="{{ session['email'] }}" readonly class="contact-email"><br><br>
+
+            <label for="subject">Subject:</label><br>
+            <input type="text" id="subject" name="subject" required><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

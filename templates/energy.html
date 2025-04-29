@@ -1,0 +1,60 @@
+{% extends "main.html" %}
+{% block title %}Energy{% endblock %}
+{% block content %}
+<div class="energy-bg">
+    <div class="calculate-energy">
+        <h2>Calculate Your Energy Consumption</h2>
+        <p>Use our energy calculator to estimate your energy consumption and find ways to save on your energy bills.</p>
+        <a href="{{ url_for('calculate_energy') }}" class="energy-button">
+            Calculate Your Energy Now!
+        </a>
+    </div>
+
+    <div class="energy-page">
+        <div class="energy-section energy-gogreen">
+            <header>Why go Green?</header>
+            <p>Going green is a great way to reduce your environmental footprint and help the planet. It can also save you money and improve your health. Here are some reasons why you should go green:</p>
+            <ul>
+                <li>Reduce your carbon footprint</li>
+                <li>Save money on energy bills</li>
+                <li>Improve your health</li>
+                <li>Help the planet</li>
+            </ul>
+        </div>
+
+        <div class="energy-section energy-gogreen">
+            <header>How to go Green</header>
+            <p>There are many ways to go green, from simple changes in your daily routine to more complex lifestyle changes. Here are some tips to help you get started:</p>
+            <ul>
+                <li>Use public transport or walk/bike</li>
+                <li>Reduce, reuse, recycle</li>
+                <li>Use energy-efficient appliances</li>
+                <li>Plant trees and gardens</li>
+            </ul>
+        </div>
+
+        <div class="energy-section energy-saving-tips">
+            <header>Energy Saving Tips</header>
+            <p>Save energy and reduce your carbon footprint with these energy-saving tips:</p>
+            <ul>
+                <li>Turn off lights when not in use</li>
+                <li>Unplug electronics when not in use</li>
+                <li>Use energy-efficient appliances</li>
+                <li>Use natural light whenever possible</li>
+            </ul>
+        </div>
+
+        <div class="energy-section energy-sources">
+            <header>Renewable Energy Sources</header>
+            <p>Learn about renewable energy sources and how they can help reduce your carbon footprint:</p>
+            <ul>
+                <li>Solar power</li>
+                <li>Wind power</li>
+                <li>Hydropower</li>
+                <li>Geothermal power</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "main.html" %}
+{% block title %}Registration{% endblock %}
+{% block content %}
+<div class="login-bg">
+    <div class="login-container">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+        <div class="login-box">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="login-logo">
+            <h2>Registration</h2>
+            <form method="POST" action="{{ url_for('register') }}">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="first_name">First Name:</label>
+                    <input type="text" name="first_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Last Name:</label>
+                    <input type="text" name="last_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm_password">Confirm Password:</label>
+                    <input type="password" name="confirm_password" required>
+                </div>
+                <button type="submit" class="button">Register</button>
+            </form>
+            {% if error %}
+                <div class="flash-message error">{{ error }}</div>
+            {% endif %}
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="flash-message {{ category }}">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+</div>
+{% endblock %}
